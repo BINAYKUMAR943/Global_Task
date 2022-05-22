@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "eb524681-8ee3-41a4-844c-380b4a09d9dd",
+		"name": "Global_tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task 1- Get individual track",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tracks/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tracks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task-2- Create a new track",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"test_track_2\",\r\n    \"artist\":\"test_artist_2\",\r\n    \"duration\":\"235.52\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tracks/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tracks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task 3- list the first 100 most recently played tracks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tracks/?limit=100 &ordering=-last_play",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tracks",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100 "
+						},
+						{
+							"key": "ordering",
+							"value": "-last_play"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task-4- Filter track by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tracks/?title=Free",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tracks",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Free"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bonus Question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/artists/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"artists",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
