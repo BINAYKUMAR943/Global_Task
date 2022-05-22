@@ -1,6 +1,6 @@
 # Global task
 
-## Steps I followed
+## My Approach
 
 ~~~
 1) I created a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
