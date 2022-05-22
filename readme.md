@@ -3,8 +3,8 @@
 ## My Approach
 
 ~~~
-1) I created a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
-2) Loaded the json data to the database. For this purpose, I extended BaseCommand class of django.core.management.base package and overriden add_arguments, handle methods.
+1) I defined a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
+2) Then loaded the table created in the database with shared json data by extending BaseCommand class of django.core.management.base package.
 3) Defined views and urls according to what was asked in the task. 
     i I defined a model viewset for track model to get the list of tracks, to retreive a unique track, to post and update a track.
     ii I used django-url-filter to provide filter and ordering capabilties to the api for task 3 and task 4.
