@@ -1,7 +1,8 @@
 # Global task
 
-~~~
 ## Steps I followed
+
+~~~
 1) I created a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
 2) Loaded the json data to the database. For this purpose, I extended BaseCommand class of django.core.management.base package and overriden add_arguments, handle methods.
 3) Defined views and urls according to what was asked in the task. 
