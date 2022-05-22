@@ -1,6 +1,6 @@
 # Global task
 
-
+~~~
 ## Steps I followed
 1) I created a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
 2) Loaded the json data to the database. For this purpose, I extended BaseCommand class of django.core.management.base package and overriden add_arguments, handle methods.
@@ -8,7 +8,7 @@
     i I defined a model viewset for track model to get the list of tracks, to retreive a unique track, to post and update a track.
     ii I used django-url-filter to provide filter and ordering capabilties to the api for task 3 and task 4.
     iii For Bonus task, I created an api with endpoint (artists/) and used SerializerMethodField in the serializer of this class to calculate the total_number_of_tracks, and most_recently_played_track for each artist.
-
+~~~
 ## Loading of json data to database
 Use the below command by replacing json_file_path with path of the json file to load the data to the database.
 
