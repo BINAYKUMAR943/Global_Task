@@ -2,15 +2,18 @@
 
 
 ## Steps I followed
-1) I created a model named Track with attributes- title,artist,duration,last_play and migrated the same to the database.
-2) Loaded the json data to the database. For this purpose, I extended BaseCommand class of django.core.management.base package and overriden add_arguments, handle methods.
-3) Defined views and urls according to what was asked in the task. 
-    3.1 I defined a model viewset for track model to get the list of tracks, to retreive a unique track, to post and update a track.
-    3.2 I used django-url-filter to provide filter and ordering capabilties to the api for task 3 and task 4.
-    3.3 For Bonus task, I created an api with endpoint (artists/) and used SerializerMethodField in the serializer of this class to calculate the total_number_of_tracks, and most_recently_played_track for each artist.
+For these tasks, I have used Python Django Rest Framework. I have defined a Track model with attributes- title, artist, duration, and last_play. I have lodaded the json data to the model using BaseCommand class of django.core.management.base package. I have defined a model viewset for the track model to get the list of tracks, retrieve a unique track, and post and update a track. And have used Django-url-filter in this project to provide filtering and ordering capabilities to the APIs for tasks 3 and task 4.
+
+For task 3, to get the list of hundred most recent track, pass the parameter- limit=100 and ordering=-last_play (example- http://127.0.0.1:8000/tracks/?limit=100&ordering=-last_play)
+Note: On Running you will get two extra tracks added by me for testing.
+
+For task 4, to filter track by name, pass the parameter- ?title=titlename (example-http://127.0.0.1:8000/tracks/?title=Free)
+
+ For the Bonus task, I have created an API with endpoint (artists/) and used SerializerMethodField in the serializer of this class to calculate the total_number_of_tracks, and most_recently_played_track for each artist.
 
 ## Loading of json data to database
-Use the below command by replacing json_file_path with path of the json file to load the data to the database.
+
+I have used the below command to load the json data to the database. Note: You don't need to run this command again as data has already been loaded to the database.
 
  ```
  python manage.py mycommand json_file_path
@@ -42,8 +45,7 @@ This will start the development server running on port 8000.
 
 
 ## Documentation
-After running the application, detail about the apis are available as swagger documentation at url (http://127.0.0.1:8000
-/swagger)
+After running the application, detail about the apis are available as swagger documentation at url (http://127.0.0.1:8000/swagger)
 
 collection of postman request is saved as Global_tasks.postman_collection.json file in the folder and can be imported in postman for making requests through postman. 
 
